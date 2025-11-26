@@ -1,0 +1,8 @@
+dispositivos:
+  Lampada [potencia]
+fimdispositivos
+
+def potencia = 10;
+
+quando potencia > 5 :
+  execute ligar em Lampada;
