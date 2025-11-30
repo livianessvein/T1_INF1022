@@ -1,8 +1,5 @@
 dispositivos:
-  Lampada [potencia]
+  Lampada
 fimdispositivos
 
-def potencia = 10;
-
-quando potencia > 5 :
-  execute ligar em Lampada;
+execute ligar em Lampada;
