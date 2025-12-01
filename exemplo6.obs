@@ -1,0 +1,5 @@
+dispositivos:
+  Lampada [ potencia ]
+fimdispositivos
+def potencia = 100;
+faca ligar em Lampada;

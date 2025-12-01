@@ -1,0 +1,4 @@
+dispositivos:
+  Ventilador
+fimdispositivos
+execute desligar Ventilador ;

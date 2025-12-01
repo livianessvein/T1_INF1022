@@ -1,0 +1,9 @@
+dispositivos:
+  Termometro[temperatura]
+  Ventilador[potencia]
+fimdispositivos
+
+def temperatura = 40;
+def potencia = 90;
+
+quando temperatura > 30 : execute ligar em Ventilador;

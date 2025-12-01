@@ -1,0 +1,12 @@
+dispositivos:
+  Monitor
+  Celular [ movimento ]
+  Higrometro [ umidade ]
+  Lampada [ potencia ]
+fimdispositivos
+
+def potencia = 100;
+
+quando umidade < 40 : alerta para Monitor : "Ar seco detectado" ;
+
+quando movimento == True : execute ligar em Lampada senao execute desligar em Lampada ;

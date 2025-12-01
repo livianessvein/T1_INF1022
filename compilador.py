@@ -1,7 +1,6 @@
 import sys
 from ply import lex, yacc
 
-
 tokens = (
     "DISPOSITIVOS", "FIMDISPOSITIVOS",
     "DEF", "QUANDO", "SENAO",
@@ -50,7 +49,8 @@ reserved = {
 }
 
 def t_ID(t):
-    r"[A-Za-z_][A-Za-z0-9_]*"
+    r"[A-Za-z][A-Za-z0-9_]*"
+    # r"[A-Za-z_][A-Za-z0-9_]*"
     t.type = reserved.get(t.value.lower(), "ID")
     return t
 
@@ -83,7 +83,6 @@ def t_error(t):
 
 
 lexer = lex.lex()
-
 
 def p_programa(p):
     """programa : sec_dev sec_cmd"""
@@ -399,12 +398,13 @@ def validar_dispositivos(lista_dispositivos, lista_cmd):
         # IF e IFELSE — precisam validar ações internas
         elif tipo == "if":
             _, cond, acao = cmd
-            erros.extend( validar_dispositivos([], [acao]) )
+            erros.extend( validar_dispositivos(lista_dispositivos, [acao]) )
 
         elif tipo == "ifelse":
             _, cond, acao1, acao2 = cmd
-            erros.extend( validar_dispositivos([], [acao1]) )
-            erros.extend( validar_dispositivos([], [acao2]) )
+            erros.extend( validar_dispositivos(lista_dispositivos, [acao1]) )
+            erros.extend( validar_dispositivos(lista_dispositivos, [acao2]) )
+
 
     return erros
 
@@ -475,6 +475,9 @@ def main():
 
     lista_dispositivos = resultado[0]
     lista_cmd = resultado[1]
+
+    print("DEBUG dispositivos =", lista_dispositivos)
+    print("DEBUG nomes =", {nome for nome, attr in lista_dispositivos})
 
     # extrazinho: validar dispositivos
     erros = validar_dispositivos(lista_dispositivos, lista_cmd)

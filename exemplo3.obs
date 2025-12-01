@@ -1,0 +1,9 @@
+dispositivos:
+  Monitor
+  Celular
+  Termometro[temperatura]
+  fimdispositivos
+
+  quando temperatura > 30 :
+  difundir: "Temperatura em " temperatura -> [Monitor , Celular
+];

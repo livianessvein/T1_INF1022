@@ -17,6 +17,6 @@ void alerta_var(char* id, char* msg, char* var) {
     printf("%s recebeu o alerta: %s %s\n", id, msg, var);
 }
 int main() {
-    ligar("Lampada");
+    alerta_var("Termometro", "Temperatura esta em", temperatura);
     return 0;
 }
