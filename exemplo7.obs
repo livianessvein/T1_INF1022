@@ -1,4 +1,4 @@
 dispositivos:
   Ventilador
 fimdispositivos
-execute desligar Ventilador ;
+execute desligar em Ventilador ;

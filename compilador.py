@@ -15,6 +15,7 @@ tokens = (
     "BOOL",
     "MSG",
     "ID",
+    "FACA",
 )
 
 # Ignorar espaços e tabs
@@ -46,6 +47,7 @@ reserved = {
     "and": "AND",
     "true": "BOOL",
     "false": "BOOL",
+    "faca": "FACA",
 }
 
 def t_ID(t):
@@ -159,12 +161,19 @@ def p_valor_id(p):
     p[0] = p[1]
 
 def p_acao_ligar(p):
-    """acao : EXECUTE LIGAR EM ID"""
-    p[0] = ("ligar", p[4])
+    """acao : EXECUTE LIGAR EM ID
+            | EXECUTE LIGAR ID
+            | FACA LIGAR EM ID
+            | FACA LIGAR ID"""
+    p[0] = ("ligar", p[len(p)-1])
 
 def p_acao_desligar(p):
-    """acao : EXECUTE DESLIGAR EM ID"""
-    p[0] = ("desligar", p[4])
+    """acao : EXECUTE DESLIGAR EM ID
+            | EXECUTE DESLIGAR ID
+            | FACA DESLIGAR EM ID
+            | FACA DESLIGAR ID"""
+    p[0] = ("desligar", p[len(p)-1])
+
 
 def p_acao_alerta_1(p):
     """acao : ALERTA PARA ID ':' MSG"""

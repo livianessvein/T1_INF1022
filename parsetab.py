@@ -6,9 +6,9 @@ _tabversion = '3.10'
 
 _lr_method = 'LALR'
 
-_lr_signature = "ALERTA AND ARROW BOOL DEF DESLIGAR DIFUNDIR DISPOSITIVOS EM EXECUTE FIMDISPOSITIVOS ID LIGAR MSG NUM OP_LOGIC PARA QUANDO SENAOprograma : sec_dev sec_cmdsec_dev : DISPOSITIVOS ':' lista_devices FIMDISPOSITIVOSlista_devices : linha_device lista_deviceslista_devices : linha_devicelinha_device : IDlinha_device : ID '[' ID ']'sec_cmd : lista_cmdlista_cmd : cmd ';' lista_cmdlista_cmd : cmd ';'cmd : atribuicao\n| obsv_acao\n| acaoatribuicao : DEF ID '=' valorobsv_acao : QUANDO observacao ':' acaoobsv_acao : QUANDO observacao ':' acao SENAO acaoobservacao : ID OP_LOGIC valorobservacao : ID OP_LOGIC valor AND observacaovalor : NUMvalor : BOOLvalor : IDacao : EXECUTE LIGAR EM IDacao : EXECUTE DESLIGAR EM IDacao : ALERTA PARA ID ':' MSGacao : ALERTA PARA ID ':' MSG ',' IDacao : DIFUNDIR ':' MSG ARROW '[' lista_ids ']'acao : DIFUNDIR ':' MSG ID ARROW '[' lista_ids ']'lista_ids : IDlista_ids : ID ',' lista_ids"
+_lr_signature = "ALERTA AND ARROW BOOL DEF DESLIGAR DIFUNDIR DISPOSITIVOS EM EXECUTE FACA FIMDISPOSITIVOS ID LIGAR MSG NUM OP_LOGIC PARA QUANDO SENAOprograma : sec_dev sec_cmdsec_dev : DISPOSITIVOS ':' lista_devices FIMDISPOSITIVOSlista_devices : linha_device lista_deviceslista_devices : linha_devicelinha_device : IDlinha_device : ID '[' ID ']'sec_cmd : lista_cmdlista_cmd : cmd ';' lista_cmdlista_cmd : cmd ';'cmd : atribuicao\n| obsv_acao\n| acaoatribuicao : DEF ID '=' valorobsv_acao : QUANDO observacao ':' acaoobsv_acao : QUANDO observacao ':' acao SENAO acaoobservacao : ID OP_LOGIC valorobservacao : ID OP_LOGIC valor AND observacaovalor : NUMvalor : BOOLvalor : IDacao : EXECUTE LIGAR EM ID\n| EXECUTE LIGAR ID\n| FACA LIGAR EM ID\n| FACA LIGAR IDacao : EXECUTE DESLIGAR EM ID\n| EXECUTE DESLIGAR ID\n| FACA DESLIGAR EM ID\n| FACA DESLIGAR IDacao : ALERTA PARA ID ':' MSGacao : ALERTA PARA ID ':' MSG ',' IDacao : DIFUNDIR ':' MSG ARROW '[' lista_ids ']'acao : DIFUNDIR ':' MSG ID ARROW '[' lista_ids ']'lista_ids : IDlista_ids : ID ',' lista_ids"
     
-_lr_action_items = {'DISPOSITIVOS':([0,],[3,]),'$end':([1,4,5,16,27,],[0,-1,-7,-9,-8,]),'DEF':([2,16,35,],[10,10,-2,]),'QUANDO':([2,16,35,],[11,11,-2,]),'EXECUTE':([2,16,29,35,50,],[12,12,12,-2,12,]),'ALERTA':([2,16,29,35,50,],[13,13,13,-2,13,]),'DIFUNDIR':([2,16,29,35,50,],[14,14,14,-2,14,]),':':([3,14,18,33,38,40,41,43,57,],[15,23,29,46,-20,-18,-19,-16,-17,]),';':([6,7,8,9,38,39,40,41,42,44,45,52,56,62,63,67,],[16,-10,-11,-12,-20,-13,-18,-19,-14,-21,-22,-23,-15,-24,-25,-26,]),'ID':([10,11,15,22,25,26,28,30,31,32,34,37,51,53,55,58,61,64,],[17,19,26,33,26,-5,38,38,44,45,48,49,19,60,-6,62,60,60,]),'LIGAR':([12,],[20,]),'DESLIGAR':([12,],[21,]),'PARA':([13,],[22,]),'=':([17,],[28,]),'OP_LOGIC':([19,],[30,]),'EM':([20,21,],[31,32,]),'MSG':([23,46,],[34,52,]),'FIMDISPOSITIVOS':([24,25,26,36,55,],[35,-4,-5,-3,-6,]),'[':([26,47,54,],[37,53,61,]),'NUM':([28,30,],[40,40,]),'BOOL':([28,30,],[41,41,]),'ARROW':([34,48,],[47,54,]),'AND':([38,40,41,43,],[-20,-18,-19,51,]),'SENAO':([42,44,45,52,62,63,67,],[50,-21,-22,-23,-24,-25,-26,]),']':([49,59,60,65,66,],[55,63,-27,67,-28,]),',':([52,60,],[58,64,]),}
+_lr_action_items = {'DISPOSITIVOS':([0,],[3,]),'$end':([1,4,5,17,30,],[0,-1,-7,-9,-8,]),'DEF':([2,17,44,],[10,10,-2,]),'QUANDO':([2,17,44,],[11,11,-2,]),'EXECUTE':([2,17,32,44,61,],[12,12,12,-2,12,]),'FACA':([2,17,32,44,61,],[13,13,13,-2,13,]),'ALERTA':([2,17,32,44,61,],[14,14,14,-2,14,]),'DIFUNDIR':([2,17,32,44,61,],[15,15,15,-2,15,]),':':([3,15,19,42,47,49,50,52,68,],[16,26,32,57,-20,-18,-19,-16,-17,]),';':([6,7,8,9,35,37,39,41,47,48,49,50,51,53,54,55,56,63,67,73,74,78,],[17,-10,-11,-12,-22,-26,-24,-28,-20,-13,-18,-19,-14,-21,-25,-23,-27,-29,-15,-30,-31,-32,]),'ID':([10,11,16,21,22,23,24,25,28,29,31,33,34,36,38,40,43,46,62,64,66,69,72,75,],[18,20,29,35,37,39,41,42,29,-5,47,47,53,54,55,56,59,60,20,71,-6,73,71,71,]),'LIGAR':([12,13,],[21,23,]),'DESLIGAR':([12,13,],[22,24,]),'PARA':([14,],[25,]),'=':([18,],[31,]),'OP_LOGIC':([20,],[33,]),'EM':([21,22,23,24,],[34,36,38,40,]),'MSG':([26,57,],[43,63,]),'FIMDISPOSITIVOS':([27,28,29,45,66,],[44,-4,-5,-3,-6,]),'[':([29,58,65,],[46,64,72,]),'NUM':([31,33,],[49,49,]),'BOOL':([31,33,],[50,50,]),'SENAO':([35,37,39,41,51,53,54,55,56,63,73,74,78,],[-22,-26,-24,-28,61,-21,-25,-23,-27,-29,-30,-31,-32,]),'ARROW':([43,59,],[58,65,]),'AND':([47,49,50,52,],[-20,-18,-19,62,]),']':([60,70,71,76,77,],[66,74,-33,78,-34,]),',':([63,71,],[69,75,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -17,7 +17,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'programa':([0,],[1,]),'sec_dev':([0,],[2,]),'sec_cmd':([2,],[4,]),'lista_cmd':([2,16,],[5,27,]),'cmd':([2,16,],[6,6,]),'atribuicao':([2,16,],[7,7,]),'obsv_acao':([2,16,],[8,8,]),'acao':([2,16,29,50,],[9,9,42,56,]),'observacao':([11,51,],[18,57,]),'lista_devices':([15,25,],[24,36,]),'linha_device':([15,25,],[25,25,]),'valor':([28,30,],[39,43,]),'lista_ids':([53,61,64,],[59,65,66,]),}
+_lr_goto_items = {'programa':([0,],[1,]),'sec_dev':([0,],[2,]),'sec_cmd':([2,],[4,]),'lista_cmd':([2,17,],[5,30,]),'cmd':([2,17,],[6,6,]),'atribuicao':([2,17,],[7,7,]),'obsv_acao':([2,17,],[8,8,]),'acao':([2,17,32,61,],[9,9,51,67,]),'observacao':([11,62,],[19,68,]),'lista_devices':([16,28,],[27,45,]),'linha_device':([16,28,],[28,28,]),'valor':([31,33,],[48,52,]),'lista_ids':([64,72,75,],[70,76,77,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -27,32 +27,38 @@ for _k, _v in _lr_goto_items.items():
 del _lr_goto_items
 _lr_productions = [
   ("S' -> programa","S'",1,None,None,None),
-  ('programa -> sec_dev sec_cmd','programa',2,'p_programa','compilador.py',88),
-  ('sec_dev -> DISPOSITIVOS : lista_devices FIMDISPOSITIVOS','sec_dev',4,'p_sec_dev','compilador.py',92),
-  ('lista_devices -> linha_device lista_devices','lista_devices',2,'p_lista_devices_rec','compilador.py',96),
-  ('lista_devices -> linha_device','lista_devices',1,'p_lista_devices_base','compilador.py',100),
-  ('linha_device -> ID','linha_device',1,'p_linha_device_1','compilador.py',104),
-  ('linha_device -> ID [ ID ]','linha_device',4,'p_linha_device_2','compilador.py',108),
-  ('sec_cmd -> lista_cmd','sec_cmd',1,'p_sec_cmd','compilador.py',112),
-  ('lista_cmd -> cmd ; lista_cmd','lista_cmd',3,'p_lista_cmd_rec','compilador.py',116),
-  ('lista_cmd -> cmd ;','lista_cmd',2,'p_lista_cmd_base','compilador.py',120),
-  ('cmd -> atribuicao','cmd',1,'p_cmd','compilador.py',124),
-  ('cmd -> obsv_acao','cmd',1,'p_cmd','compilador.py',125),
-  ('cmd -> acao','cmd',1,'p_cmd','compilador.py',126),
-  ('atribuicao -> DEF ID = valor','atribuicao',4,'p_atribuicao','compilador.py',130),
-  ('obsv_acao -> QUANDO observacao : acao','obsv_acao',4,'p_obsv_acao_if','compilador.py',134),
-  ('obsv_acao -> QUANDO observacao : acao SENAO acao','obsv_acao',6,'p_obsv_acao_if_else','compilador.py',138),
-  ('observacao -> ID OP_LOGIC valor','observacao',3,'p_observacao_simples','compilador.py',142),
-  ('observacao -> ID OP_LOGIC valor AND observacao','observacao',5,'p_observacao_and','compilador.py',146),
-  ('valor -> NUM','valor',1,'p_valor_num','compilador.py',150),
-  ('valor -> BOOL','valor',1,'p_valor_bool','compilador.py',154),
-  ('valor -> ID','valor',1,'p_valor_id','compilador.py',158),
-  ('acao -> EXECUTE LIGAR EM ID','acao',4,'p_acao_ligar','compilador.py',162),
-  ('acao -> EXECUTE DESLIGAR EM ID','acao',4,'p_acao_desligar','compilador.py',166),
-  ('acao -> ALERTA PARA ID : MSG','acao',5,'p_acao_alerta_1','compilador.py',170),
-  ('acao -> ALERTA PARA ID : MSG , ID','acao',7,'p_acao_alerta_2','compilador.py',174),
-  ('acao -> DIFUNDIR : MSG ARROW [ lista_ids ]','acao',7,'p_acao_difundir_1','compilador.py',178),
-  ('acao -> DIFUNDIR : MSG ID ARROW [ lista_ids ]','acao',8,'p_acao_difundir_2','compilador.py',182),
-  ('lista_ids -> ID','lista_ids',1,'p_lista_ids_unico','compilador.py',186),
-  ('lista_ids -> ID , lista_ids','lista_ids',3,'p_lista_ids_multi','compilador.py',190),
+  ('programa -> sec_dev sec_cmd','programa',2,'p_programa','compilador.py',90),
+  ('sec_dev -> DISPOSITIVOS : lista_devices FIMDISPOSITIVOS','sec_dev',4,'p_sec_dev','compilador.py',94),
+  ('lista_devices -> linha_device lista_devices','lista_devices',2,'p_lista_devices_rec','compilador.py',98),
+  ('lista_devices -> linha_device','lista_devices',1,'p_lista_devices_base','compilador.py',102),
+  ('linha_device -> ID','linha_device',1,'p_linha_device_1','compilador.py',106),
+  ('linha_device -> ID [ ID ]','linha_device',4,'p_linha_device_2','compilador.py',110),
+  ('sec_cmd -> lista_cmd','sec_cmd',1,'p_sec_cmd','compilador.py',114),
+  ('lista_cmd -> cmd ; lista_cmd','lista_cmd',3,'p_lista_cmd_rec','compilador.py',118),
+  ('lista_cmd -> cmd ;','lista_cmd',2,'p_lista_cmd_base','compilador.py',122),
+  ('cmd -> atribuicao','cmd',1,'p_cmd','compilador.py',126),
+  ('cmd -> obsv_acao','cmd',1,'p_cmd','compilador.py',127),
+  ('cmd -> acao','cmd',1,'p_cmd','compilador.py',128),
+  ('atribuicao -> DEF ID = valor','atribuicao',4,'p_atribuicao','compilador.py',132),
+  ('obsv_acao -> QUANDO observacao : acao','obsv_acao',4,'p_obsv_acao_if','compilador.py',136),
+  ('obsv_acao -> QUANDO observacao : acao SENAO acao','obsv_acao',6,'p_obsv_acao_if_else','compilador.py',140),
+  ('observacao -> ID OP_LOGIC valor','observacao',3,'p_observacao_simples','compilador.py',144),
+  ('observacao -> ID OP_LOGIC valor AND observacao','observacao',5,'p_observacao_and','compilador.py',148),
+  ('valor -> NUM','valor',1,'p_valor_num','compilador.py',152),
+  ('valor -> BOOL','valor',1,'p_valor_bool','compilador.py',156),
+  ('valor -> ID','valor',1,'p_valor_id','compilador.py',160),
+  ('acao -> EXECUTE LIGAR EM ID','acao',4,'p_acao_ligar','compilador.py',164),
+  ('acao -> EXECUTE LIGAR ID','acao',3,'p_acao_ligar','compilador.py',165),
+  ('acao -> FACA LIGAR EM ID','acao',4,'p_acao_ligar','compilador.py',166),
+  ('acao -> FACA LIGAR ID','acao',3,'p_acao_ligar','compilador.py',167),
+  ('acao -> EXECUTE DESLIGAR EM ID','acao',4,'p_acao_desligar','compilador.py',171),
+  ('acao -> EXECUTE DESLIGAR ID','acao',3,'p_acao_desligar','compilador.py',172),
+  ('acao -> FACA DESLIGAR EM ID','acao',4,'p_acao_desligar','compilador.py',173),
+  ('acao -> FACA DESLIGAR ID','acao',3,'p_acao_desligar','compilador.py',174),
+  ('acao -> ALERTA PARA ID : MSG','acao',5,'p_acao_alerta_1','compilador.py',179),
+  ('acao -> ALERTA PARA ID : MSG , ID','acao',7,'p_acao_alerta_2','compilador.py',183),
+  ('acao -> DIFUNDIR : MSG ARROW [ lista_ids ]','acao',7,'p_acao_difundir_1','compilador.py',187),
+  ('acao -> DIFUNDIR : MSG ID ARROW [ lista_ids ]','acao',8,'p_acao_difundir_2','compilador.py',191),
+  ('lista_ids -> ID','lista_ids',1,'p_lista_ids_unico','compilador.py',195),
+  ('lista_ids -> ID , lista_ids','lista_ids',3,'p_lista_ids_multi','compilador.py',199),
 ]
