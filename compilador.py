@@ -1,3 +1,6 @@
+# Livian Essvein 2211667
+# Luiza Régnier 2211931
+
 import sys
 from ply import lex, yacc
 
@@ -30,7 +33,7 @@ t_ARROW = r'->'
 # Literais diretos
 literals = [':', '[', ']', ',', ';', '=']
 
-
+# palavras reservadas
 reserved = {
     "dispositivos": "DISPOSITIVOS",
     "fimdispositivos": "FIMDISPOSITIVOS",
@@ -52,7 +55,6 @@ reserved = {
 
 def t_ID(t):
     r"[A-Za-z][A-Za-z0-9_]*"
-    # r"[A-Za-z_][A-Za-z0-9_]*"
     t.type = reserved.get(t.value.lower(), "ID")
     return t
 
