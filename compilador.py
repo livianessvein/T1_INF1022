@@ -490,7 +490,6 @@ def main():
     print("DEBUG dispositivos =", lista_dispositivos)
     print("DEBUG nomes =", {nome for nome, attr in lista_dispositivos})
 
-    # extrazinho: validar dispositivos
     erros = validar_dispositivos(lista_dispositivos, lista_cmd)
 
     if erros:

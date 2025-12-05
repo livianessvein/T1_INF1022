@@ -17,6 +17,6 @@ void alerta_var(char* id, char* msg, char* var) {
     printf("%s recebeu o alerta: %s %s\n", id, msg, var);
 }
 int main() {
-    alerta_var("Termometro", "Temperatura esta em", temperatura);
+    alerta("Celular", "Hora de acordar !");
     return 0;
 }
