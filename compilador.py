@@ -406,7 +406,7 @@ def validar_dispositivos(lista_dispositivos, lista_cmd):
                 if dispositivo not in nomes:
                     erros.append(f"Dispositivo '{dispositivo}' nao existe.")
 
-        # IF e IFELSE — precisam validar ações internas
+        # IF e IFELSE
         elif tipo == "if":
             _, cond, acao = cmd
             erros.extend( validar_dispositivos(lista_dispositivos, [acao]) )
@@ -415,7 +415,6 @@ def validar_dispositivos(lista_dispositivos, lista_cmd):
             _, cond, acao1, acao2 = cmd
             erros.extend( validar_dispositivos(lista_dispositivos, [acao1]) )
             erros.extend( validar_dispositivos(lista_dispositivos, [acao2]) )
-
 
     return erros
 
